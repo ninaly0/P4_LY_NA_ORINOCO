@@ -1,0 +1,17 @@
+.product-details {
+  @include make-container(8rem);
+  .product-information {
+    margin-left: 20px;
+  }
+
+  .lenses-select {
+    max-width: 300px;
+
+    select {
+      height: 35px;
+    }
+  }
+  button {
+
+  }
+}

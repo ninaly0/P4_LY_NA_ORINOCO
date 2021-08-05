@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="home-header">
+  <header class="product-header">
     <div class="container py-4">
       <div class="row mb-2">
         <div class="col">
@@ -28,15 +28,28 @@
       </div>
     </div>
   </header>
-  <main>
-    <div class="banner">
-      <div class="banner-overlay"></div>
-      <img class="banner-img" src="images/banner.jpg" alt="">
-      <h1 class="d-flex justify-content-center w-100 fs-1">Bienvenue dans la boutique de l'argentique</h1>
-      <p class="d-flex justify-content-center w-100 fs-3">Découvrez notre gamme d'appareil photo vintage</p>
-    </div>
-    <div class="card-list container">
-      <div class="card-list-row row row-cols-3"></div>
+  <main class="mt-4">
+    <div class="container product-details">
+      <div class="row">
+        <div class="col-6">
+          <figure class="figure">
+            <img src="images/vcam_1.jpg" class="figure-img img-fluid rounded" alt="">
+          </figure>
+        </div>
+        <div class="col-6 product-informations">
+          <h2>title</h2>
+          <p>description</p>
+          <p>price</p>
+          <div class="lenses-select mb-5">
+            <label class="d-block mb-2" for="lenses-select">Lentille:</label>
+            <select class="w-100" name="lenses" id="lenses-select">
+              <option value="">Veuillez choisir</option>
+              <option value="">35mm 1.4</option>
+            </select>
+          </div>
+          <button class="btn btn-outline-dark btn-lg" type="submit">Ajouter au panier</button>
+        </div>
+      </div>
     </div>
   </main>
   <footer>
@@ -44,7 +57,6 @@
       <p class="d-block mb-0">Orinoco, Copyright 2021</p>
     </div>
   </footer>
-  <script src="../src/common.js"></script>
   <script src="../src/index.js"></script>
 </body>
 </html>

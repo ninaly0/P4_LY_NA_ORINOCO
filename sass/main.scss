@@ -1,4 +1,11 @@
+@import "base/reset.scss";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-@import "base/typography";
-@import "base/reset";
+@import "base/typography.scss";
+@import "base/global.scss";
+@import "utils/mixins.scss";
+@import "utils/variables.scss";
+@import "layouts/header.scss";
+@import "layouts/footer.scss";
+@import "pages/index.scss";
+@import "pages/product.scss";

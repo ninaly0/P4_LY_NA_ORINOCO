@@ -1,0 +1,20 @@
+header {
+  &.home-header {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+  &.product-header {
+    background: $black;
+  }
+
+  .logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: $white;
+  }
+}
