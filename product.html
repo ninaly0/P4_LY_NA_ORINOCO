@@ -30,21 +30,23 @@
   </header>
   <main class="mt-4">
     <div class="container product-details">
-      <div class="row">
+      <div class="app-loader spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="app-card d-none row">
         <div class="col-6">
           <figure class="figure">
-            <img src="images/vcam_1.jpg" class="figure-img img-fluid rounded" alt="">
+            <img src="" class="figure-img img-fluid rounded" alt="">
           </figure>
         </div>
         <div class="col-6 product-informations">
           <h2>title</h2>
-          <p>description</p>
-          <p>price</p>
+          <p class="description"></p>
+          <p class="price"></p>
           <div class="lenses-select mb-5">
             <label class="d-block mb-2" for="lenses-select">Lentille:</label>
             <select class="w-100" name="lenses" id="lenses-select">
               <option value="">Veuillez choisir</option>
-              <option value="">35mm 1.4</option>
             </select>
           </div>
           <button class="btn btn-outline-dark btn-lg" type="submit">Ajouter au panier</button>
@@ -57,6 +59,7 @@
       <p class="d-block mb-0">Orinoco, Copyright 2021</p>
     </div>
   </footer>
-  <script src="../src/index.js"></script>
+  <script src="../src/common.js"></script>
+  <script src="../src/product-details.js"></script>
 </body>
 </html>
