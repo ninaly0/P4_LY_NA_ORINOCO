@@ -12,15 +12,15 @@
   <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
-  <header>
+  <header class="product-header">
     <div class="container py-4">
-      <div class="row">
+      <div class="row mb-2">
         <div class="col">
           <a class="logo" href="index.html">Orinoco</a>
         </div>
-        <div class="col d-flex justify-content-end">
+        <div class="col d-flex justify-content-end align-items-center">
           <a href="cart.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#FFF" class="bi bi-cart-fill" viewBox="0 0 16 16">
               <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
             </svg>
           </a>
@@ -28,7 +28,65 @@
       </div>
     </div>
   </header>
-  <h1>Cart</h1>
-  <script src="../src/index.js"></script>
+  <main>
+    <div class="container" id="cart-product">
+      <h1>Mon panier</h1>
+      <div class="empty-cart d-none">
+        <p>Votre panier est actuellement vide</p>
+      </div>
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">Produit</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody id="cart-details"></tbody>
+        <tfoot>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>Total panier</td>
+            <td class="totalCartPrice"></td>
+          </tr>
+        </tfoot>
+      </table>
+      <form class="form-contact">
+        <div class="mb-3">
+          <label for="lastname" class="form-label">Nom</label>
+          <input type="text" class="form-control lastname" id="lastname">
+        </div>
+        <div class="mb-3">
+          <label for="firstname" class="form-label">Prénom</label>
+          <input type="text" class="form-control firstname" id="firstname">
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label">Adresse</label>
+          <input type="text" class="form-control address" id="address">
+        </div>
+        <div class="mb-3">
+          <label for="city" class="form-label">Ville</label>
+          <input type="text" class="form-control city" id="city">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control email" id="email">
+        </div>
+        <div>
+          <input type="submit" class="btn-submit btn btn-dark" value="Valider le formulaire">
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <div class="container d-flex align-items-center h-100">
+      <p class="d-block mb-0">Orinoco, Copyright 2021</p>
+    </div>
+  </footer>
+  <script src="../src/cart.js"></script>
 </body>
 </html>

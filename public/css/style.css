@@ -11121,6 +11121,7 @@ body {
   justify-content: space-between;
   height: 100%;
   min-height: 100vh;
+  background-color: #e8e6da;
 }
 
 main {
@@ -11140,7 +11141,7 @@ header.home-header {
   z-index: 3;
 }
 header.product-header {
-  background: #000;
+  background: #2F4858;
 }
 header .logo {
   font-size: 36px;
@@ -11149,7 +11150,7 @@ header .logo {
 }
 
 footer {
-  background: #dee2e6;
+  background: #C7CBBA;
   height: 50px;
   margin-top: 50px;
 }
@@ -11168,7 +11169,6 @@ main .banner .banner-overlay {
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
@@ -11185,13 +11185,12 @@ main .banner .banner-img {
 main .banner h1, main .banner .h1 {
   position: absolute;
   top: 30%;
-  width: 100%;
   color: #fff;
   z-index: 3;
 }
 main .banner p {
   position: absolute;
-  top: 40%;
+  top: 45%;
   width: 100%;
   color: #fff;
   z-index: 3;
@@ -11199,28 +11198,54 @@ main .banner p {
 main .card-list a {
   color: #000;
 }
-main .col {
-  margin-bottom: 1.5rem;
-}
-main .col img.card-img-top {
+main img.card-img-top {
   height: 195px;
 }
 
-.product-details {
-  width: 100%;
-  padding-right: 8rem;
-  padding-left: 8rem;
-  margin-right: auto;
-  margin-left: auto;
+#product-details .product-informations {
+  background-color: #f6f5f0;
+  border: 1px solid #6c757d;
+  border-radius: 10px;
+  padding: 20px;
 }
-.product-details .product-information {
-  margin-left: 20px;
-}
-.product-details .lenses-select {
+#product-details .lenses-select {
   max-width: 300px;
 }
-.product-details .lenses-select select {
+#product-details .lenses-select select {
   height: 35px;
+}
+
+#cart-product {
+  margin-top: 20px;
+}
+#cart-product figure img {
+  width: 100px;
+}
+#cart-product h1, #cart-product .h1 {
+  font-size: 24px;
+}
+#cart-product h2, #cart-product .h2 {
+  font-size: 28px;
+}
+#cart-product .empty-cart {
+  display: inline-block;
+  background: #C7CBBA;
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+#cart-product .empty-cart p {
+  margin-bottom: 0;
+}
+
+#order h1, #order .h1 {
+  font-size: 24px;
+  margin-top: 40px;
+}
+#order h1 + p, #order .h1 + p {
+  font-size: 20px;
+  margin: 40px 0;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,9 @@
-.product-details {
-  @include make-container(8rem);
-  .product-information {
-    margin-left: 20px;
+#product-details {
+  .product-informations {
+    background-color: #f6f5f0;
+    border: 1px solid $gray-600;
+    border-radius: 10px;
+    padding: 20px;
   }
 
   .lenses-select {
@@ -10,8 +12,5 @@
     select {
       height: 35px;
     }
-  }
-  button {
-
   }
 }

@@ -28,28 +28,30 @@
       </div>
     </div>
   </header>
-  <main class="mt-4">
-    <div class="container product-details">
-      <div class="app-loader spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
+  <main class="mt-5">
+    <div class="container" id="product-details">
+      <div class="d-flex justify-content-center">
+        <div class="app-loader spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
       </div>
-      <div class="app-card d-none row">
-        <div class="col-6">
+      <div class="app-card d-none row justify-content-center">
+        <div class="col-lg-6 col-md-12">
           <figure class="figure">
-            <img src="" class="figure-img img-fluid rounded" alt="">
+            <img class="figure-img img-fluid rounded" src="" alt="">
           </figure>
         </div>
-        <div class="col-6 product-informations">
+        <div class="col-lg-4 col-md-12 product-informations">
           <h2>title</h2>
           <p class="description"></p>
           <p class="price"></p>
           <div class="lenses-select mb-5">
             <label class="d-block mb-2" for="lenses-select">Lentille:</label>
-            <select class="w-100" name="lenses" id="lenses-select">
+            <select class="form-select form-select-md w-100" name="lenses" id="lenses-select">
               <option value="">Veuillez choisir</option>
             </select>
           </div>
-          <button class="btn btn-outline-dark btn-lg" type="submit">Ajouter au panier</button>
+          <button class="add-to-cart btn btn-outline-dark btn-lg" type="submit">Ajouter au panier</button>
         </div>
       </div>
     </div>
@@ -59,7 +61,6 @@
       <p class="d-block mb-0">Orinoco, Copyright 2021</p>
     </div>
   </footer>
-  <script src="../src/common.js"></script>
   <script src="../src/product-details.js"></script>
 </body>
 </html>

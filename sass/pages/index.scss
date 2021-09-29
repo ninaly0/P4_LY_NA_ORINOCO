@@ -9,7 +9,6 @@ main{
     .banner-overlay {
       position: absolute;
       @include positionZero;
-      width: 100%;
       height: 100%;
       background-color: rgba(0,0,0,0.5);
       z-index: 1;
@@ -26,14 +25,13 @@ main{
     h1 {
       position: absolute;
       top: 30%;
-      width:100%;
       color: $white;
       z-index: 3;
     }
 
     p {
       position: absolute;
-      top: 40%;
+      top: 45%;
       width:100%;
       color: $white;
       z-index: 3;
@@ -44,11 +42,7 @@ main{
       color: $black;
     }
   }
-  .col {
-    margin-bottom: 1.5rem;
-
-    img.card-img-top {
-      height: 195px;
-    }
+  img.card-img-top {
+    height: 195px;
   }
 }

@@ -1,0 +1,11 @@
+#order {
+  h1 {
+    font-size: 24px;
+    margin-top: 40px;
+
+    & + p {
+      font-size: 20px;
+      margin: 40px 0;
+    }
+  }
+}

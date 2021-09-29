@@ -1,0 +1,26 @@
+#cart-product {
+  margin-top: 20px;
+
+  figure img {
+    width: 100px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+
+  .empty-cart {
+    display: inline-block;
+    background: #C7CBBA;
+    padding: 10px 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-top: 20px;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
