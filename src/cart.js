@@ -8,10 +8,10 @@ let newUser = {
 }
 
 // récupérer les données de localstorage
-let products = [];
+let productsArray = [];
 // S'il y a qqch dans le localStorage
 if (localStorage.getItem("products") !== null) {
-  products = JSON.parse(localStorage.getItem("products"));
+  productsArray = JSON.parse(localStorage.getItem("products"));
 } else {
   const table = document.querySelector('.table');
   table.style.display = "none";
@@ -21,25 +21,29 @@ if (localStorage.getItem("products") !== null) {
   form.style.display = "none";
 }
 
-
 // fonction qui permet de recuperer le dernier element du localstorage et regrouper les memes cameras
-function addToCart(){
+function gatherSameProduct(){
   const showCart = {};
-  for(let a = 0; a < products.length; a++) {
-    let product = products[a];
-    if(!showCart[product.id]) {
-        showCart[product.id] = {
-          product: product,
-          quantity: 0
-        };
+
+  if (products === null || products === undefined) {
+    return;
+  } else {
+    for(let a = 0; a < products.length; a++) {
+      let product = products[a];
+      if (!showCart[product.id]) {
+          showCart[product.id] = {
+            product: product,
+            quantity: 0
+          };
+      }
+      showCart[product.id].quantity++;
     }
-    showCart[product.id].quantity++;
   }
+
   return showCart;
 }
 
 function displayProductsToCart() {
-
   // fonction qui calcule le total du panier
   // ce qu'on va récupérer dans la page de confirmation
   function totalCart() {
@@ -50,7 +54,7 @@ function displayProductsToCart() {
     return sum
   }
 
-  const show = addToCart();
+  const show = gatherSameProduct();
   let entries = Object.values(show);
 
   for (var e = 0; e < entries.length; e++){
@@ -123,6 +127,7 @@ function lastnameValid() {
     return false;
   }
 }
+
 function firstnameValid() {
   if (firstname.value.length > 0) {
     newUser.firstName = firstname.value;
@@ -131,6 +136,7 @@ function firstnameValid() {
     return false;
   }
 }
+
 function addressValid() {
   if (address.value.length > 0) {
     newUser.address = address.value;
@@ -139,6 +145,7 @@ function addressValid() {
     return false;
   }
 }
+
 function cityValid() {
   if (city.value.length > 0) {
     newUser.city = city.value;
@@ -159,21 +166,20 @@ function emailValid() {
   }
 }
 
-const submitFormBtn = document.querySelector(".btn-submit");
-submitFormBtn.addEventListener('click', formValidation);
-
-// creation objet contact et tableau produit
 function formValidation() {
-
-  addToCart();
-
-  // Verifie la validité du champ saisis
   lastnameValid();
   firstnameValid();
   addressValid();
   cityValid();
   emailValid();
+}
 
+const submitFormBtn = document.querySelector(".btn-submit");
+submitFormBtn.addEventListener('click', sendObjectToServer);
+
+function sendObjectToServer() {
+
+  formValidation();
   // creation du tableau qui va contenir les id des cameras
   let productsId = [];
   // S'il y a qqch dans le localStorage
@@ -210,5 +216,6 @@ function formValidation() {
   .catch(error => {
     alert(error);
   })
-
 }
+
+numberOfProduct()

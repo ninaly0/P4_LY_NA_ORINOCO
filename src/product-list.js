@@ -60,3 +60,4 @@ function displayProducts() {
 }
 
 displayProducts();
+numberOfProduct();
