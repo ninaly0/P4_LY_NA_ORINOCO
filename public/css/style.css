@@ -11200,6 +11200,7 @@ main .card-list a {
 }
 main img.card-img-top {
   height: 195px;
+  object-fit: cover;
 }
 
 #product-details .product-informations {
@@ -11213,6 +11214,10 @@ main img.card-img-top {
 }
 #product-details .lenses-select select {
   height: 35px;
+}
+#product-details .badge {
+  width: 20px;
+  height: 20px;
 }
 
 #cart-product {
