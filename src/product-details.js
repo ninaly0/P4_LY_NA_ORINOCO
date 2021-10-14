@@ -17,10 +17,9 @@ function addProductToLs(product) {
 
     products.push(objectInLs);
     localStorage.setItem("products", JSON.stringify(products));
+    numberOfProduct();
   });
 }
-
-numberOfProduct()
 
 function displayProduct(data) {
   // Injection des infos du produit cliqué

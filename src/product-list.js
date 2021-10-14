@@ -60,4 +60,5 @@ function displayProducts() {
 }
 
 displayProducts();
+
 numberOfProduct();

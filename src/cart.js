@@ -25,11 +25,11 @@ if (localStorage.getItem("products") !== null) {
 function gatherSameProduct(){
   const showCart = {};
 
-  if (products === null || products === undefined) {
+  if (productsArray === null || productsArray === undefined) {
     return;
   } else {
-    for(let a = 0; a < products.length; a++) {
-      let product = products[a];
+    for(let a = 0; a < productsArray.length; a++) {
+      let product = productsArray[a];
       if (!showCart[product.id]) {
           showCart[product.id] = {
             product: product,
@@ -167,11 +167,7 @@ function emailValid() {
 }
 
 function formValidation() {
-  lastnameValid();
-  firstnameValid();
-  addressValid();
-  cityValid();
-  emailValid();
+  return lastnameValid() === false || firstnameValid() === false || addressValid() === false || cityValid() === false || emailValid() === false;
 }
 
 const submitFormBtn = document.querySelector(".btn-submit");
@@ -179,7 +175,6 @@ submitFormBtn.addEventListener('click', sendObjectToServer);
 
 function sendObjectToServer() {
 
-  formValidation();
   // creation du tableau qui va contenir les id des cameras
   let productsId = [];
   // S'il y a qqch dans le localStorage
@@ -197,25 +192,27 @@ function sendObjectToServer() {
   }
 
   // Envoi au serveur
-  fetch("http://localhost:3500/api/cameras/order", {
-    method: "POST",
-    body: JSON.stringify(objectToSend),
-    headers: {
-      "Content-Type": "application/json",
-    }
-  })
-  .then(function(res){
-    res.json().then(function(json) {
-      let orderId = json.orderId;
-      if ( lastnameValid() === false || firstnameValid() === false || addressValid() === false || cityValid() === false) {
-        return;
+  if (formValidation()) {
+    return;
+  } else {
+    fetch("http://localhost:3500/api/cameras/order", {
+      method: "POST",
+      body: JSON.stringify(objectToSend),
+      headers: {
+        "Content-Type": "application/json",
       }
-      document.location.href = 'orderConfirmation.html?id=' + orderId;
     })
-  })
-  .catch(error => {
-    alert(error);
-  })
+    .then(function(res){
+      res.json().then(function(json) {
+        let orderId = json.orderId;
+        document.location.href = 'orderConfirmation.html?id=' + orderId;
+        resetNumberOfProduct()
+      })
+    })
+    .catch(error => {
+      alert(error);
+    })
+  }
 }
 
-numberOfProduct()
+numberOfProduct();

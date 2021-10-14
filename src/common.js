@@ -1,6 +1,5 @@
-let products = JSON.parse(localStorage.getItem('products'));
-
 function numberOfProduct() {
+  let products = JSON.parse(localStorage.getItem('products'));
   const countProduct = document.querySelector('.count-product');
 
   if (products === null) {
