@@ -120,7 +120,7 @@ let city = document.querySelector('.city');
 let email = document.querySelector('.email');
 
 function lastnameValid() {
-  if (lastname.value.length > 0) {
+  if (lastname.value.trim().length > 0) {
     newUser.lastName = lastname.value;
   } else {
     alert("Le champ nom doit être rempli");
@@ -129,7 +129,7 @@ function lastnameValid() {
 }
 
 function firstnameValid() {
-  if (firstname.value.length > 0) {
+  if (firstname.value.trim().length > 0) {
     newUser.firstName = firstname.value;
   } else {
     alert("Le champ prénom doit être rempli");
@@ -138,7 +138,7 @@ function firstnameValid() {
 }
 
 function addressValid() {
-  if (address.value.length > 0) {
+  if (address.value.trim().length > 0) {
     newUser.address = address.value;
   } else {
     alert("Le champ adresse doit être rempli");
@@ -147,7 +147,7 @@ function addressValid() {
 }
 
 function cityValid() {
-  if (city.value.length > 0) {
+  if (city.value.trim().length > 0) {
     newUser.city = city.value;
   } else {
     alert("Le champ ville doit être rempli");
