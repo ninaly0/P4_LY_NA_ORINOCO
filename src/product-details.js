@@ -15,11 +15,19 @@ function addProductToLs(product) {
       products = JSON.parse(localStorage.getItem("products"));
     }
 
+    let select = document.querySelector('#lenses-select');
+    if (select.value.length < 1) { 
+      alert("N'oubliez pas de selectionner la lentille")
+      return;
+    }
+
     products.push(objectInLs);
     localStorage.setItem("products", JSON.stringify(products));
     numberOfProduct();
   });
 }
+// il faut que je fasse une boucle sur les options, quand on voit que ca change, on met l'attribut selected
+// si la valeur de selected c'est "choose", alors on met une alerte
 
 function displayProduct(data) {
   // Injection des infos du produit cliqué
@@ -29,10 +37,11 @@ function displayProduct(data) {
   prodDescription.textContent = data.description;
   let prodPrice = document.querySelector('#product-details .product-informations p.price');
   prodPrice.textContent = data.price + ' €';
-  let selectEl = document.querySelector('.lenses-select select');
+  let selectEl = document.querySelector('select');
   for (var i = 0; i < data.lenses.length; i++) {
     let option = document.createElement('option');
     option.textContent = data.lenses[i];
+    option.setAttribute('value', data.lenses[i]);
     selectEl.appendChild(option);
   }
   let productImg = document.querySelector('.app-card img');

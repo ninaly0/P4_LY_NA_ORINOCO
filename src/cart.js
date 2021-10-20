@@ -119,45 +119,49 @@ let address = document.querySelector('.address');
 let city = document.querySelector('.city');
 let email = document.querySelector('.email');
 
+let lastnameReg = /^[a-zA-Z\-\ ]+$/;
+let firstnameReg = /^[a-zA-Z\-\ ]+$/;
+let addressReg = /[A-Za-z0-9'\.\-\s\,\ ]/;
+let cityReg = /^[A-Z][A-Za-z\é\è\ê\-\'\ ]+$/;
+let emailReg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
 function lastnameValid() {
-  if (lastname.value.trim().length > 0) {
+  if (lastnameReg.test(lastname.value)) {
     newUser.lastName = lastname.value;
   } else {
-    alert("Le champ nom doit être rempli");
+    alert("Le champ nom est incorrect");
     return false;
   }
 }
 
 function firstnameValid() {
-  if (firstname.value.trim().length > 0) {
+  if (firstnameReg.test(firstname.value)) {
     newUser.firstName = firstname.value;
   } else {
-    alert("Le champ prénom doit être rempli");
+    alert("Le champ prénom est incorrect");
     return false;
   }
 }
 
 function addressValid() {
-  if (address.value.trim().length > 0) {
+  if (addressReg.test(address.value)) {
     newUser.address = address.value;
   } else {
-    alert("Le champ adresse doit être rempli");
+    alert("Le champ adresse est incorrect");
     return false;
   }
 }
 
 function cityValid() {
-  if (city.value.trim().length > 0) {
+  if (cityReg.test(city.value)) {
     newUser.city = city.value;
   } else {
-    alert("Le champ ville doit être rempli");
+    alert("Le champ ville est incorrect");
     return false;
   }
 }
 
 function emailValid() {
-  let emailReg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-
   if (emailReg.test(email.value)) {
     newUser.email = email.value;
   } else {
