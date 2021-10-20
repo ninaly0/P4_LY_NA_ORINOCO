@@ -1,3 +1,4 @@
+// fonction qui permet de reprendre le nombre de produit mis dans le panier
 function numberOfProduct() {
   let products = JSON.parse(localStorage.getItem('products'));
   const countProduct = document.querySelector('.count-product');

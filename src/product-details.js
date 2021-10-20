@@ -1,3 +1,12 @@
+// Vérifier si une lentille est séléctionnée
+function lenseSelected() {
+  let select = document.querySelector('#lenses-select');
+  if (select.value.length < 1) { 
+    alert("N'oubliez pas de selectionner la lentille")
+    return;
+  }
+}
+
 // Ajout des produits dans le localStorage
 function addProductToLs(product) {
   let products = [];
@@ -14,20 +23,12 @@ function addProductToLs(product) {
     if (localStorage.getItem("products") !== null) {
       products = JSON.parse(localStorage.getItem("products"));
     }
-
-    let select = document.querySelector('#lenses-select');
-    if (select.value.length < 1) { 
-      alert("N'oubliez pas de selectionner la lentille")
-      return;
-    }
-
     products.push(objectInLs);
     localStorage.setItem("products", JSON.stringify(products));
+    lenseSelected();
     numberOfProduct();
   });
 }
-// il faut que je fasse une boucle sur les options, quand on voit que ca change, on met l'attribut selected
-// si la valeur de selected c'est "choose", alors on met une alerte
 
 function displayProduct(data) {
   // Injection des infos du produit cliqué

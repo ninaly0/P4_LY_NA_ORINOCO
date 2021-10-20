@@ -119,8 +119,8 @@ let address = document.querySelector('.address');
 let city = document.querySelector('.city');
 let email = document.querySelector('.email');
 
-let lastnameReg = /^[a-zA-Z\-\ ]+$/;
-let firstnameReg = /^[a-zA-Z\-\ ]+$/;
+let lastnameReg = /^[a-zA-Z\-\'\ ]+$/;
+let firstnameReg = /^[a-zA-Z\-\'\ ]+$/;
 let addressReg = /[A-Za-z0-9'\.\-\s\,\ ]/;
 let cityReg = /^[A-Z][A-Za-z\é\è\ê\-\'\ ]+$/;
 let emailReg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;

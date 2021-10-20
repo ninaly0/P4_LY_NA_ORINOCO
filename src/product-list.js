@@ -1,3 +1,4 @@
+// Affichage de la liste des produits de l'API
 function displayProducts() {
 
   // Récupération des informations dans l'API
